@@ -46,6 +46,12 @@ const {inputs, labels} = tensorData;
 // Train the model  
 await trainModel(model, inputs, labels);
 console.log('Done Training');
+
+// Make some predictions using the model and compare them to the
+// original data
+testModel(model, data, tensorData);
+
+
 }
 
 function createModel() {
