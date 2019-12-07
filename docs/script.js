@@ -118,7 +118,7 @@ async function trainModel(model, inputs, labels) {
   });
   
   const batchSize = 32;
-  const epochs = 50;
+  const epochs = 100;
   
   return await model.fit(inputs, labels, {
     batchSize,
@@ -140,7 +140,7 @@ function testModel(model, inputData, normalizationData) {
   // that we did earlier.
   const [xs, preds] = tf.tidy(() => {
     
-    const xs = tf.linspace(0, 1, 100);      
+    const xs = tf.linspace(0, 1, 50);      
     const preds = model.predict(xs.reshape([100, 1]));      
     
     const unNormXs = xs
